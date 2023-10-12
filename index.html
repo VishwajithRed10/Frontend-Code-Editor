@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Live Code Editor</title>
+    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/928f9e219f.js" crossorigin="anonymous"></script>
+    <script src="prism.js"></script>
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left">
+
+            <label><i class="fa-brands fa-html5"></i> HTML</label>
+            <div style="position: relative;">
+            <textarea id="html-code" oninput="update(this.value);sync_scroll(this);" onscroll="sync_scroll(this);" onkeyup="run()" onkeydown="check_tab(this,event);" spellcheck="false"></textarea>
+            <pre id="highlighting" aria-hidden="true">
+                <code class="language-html" id="highlighting-content"></code>
+            </pre>
+            </div>
+
+            <label><i class="fa-solid fa-file-code"></i> CSS</label>
+            <div style="position: relative;">
+            <textarea id="css-code" oninput="update(this.value);sync_scroll(this);" onscroll="sync_scroll(this);" onkeyup="run()" spellcheck="false"></textarea>
+            <pre id="highlighting" aria-hidden="true">
+                <code class="language-css" id="highlighting-content"></code>
+            </pre>
+            </div>
+
+            <label><i class="fa-brands fa-square-js"></i> JavaScript</label>
+            <div style="position: relative;">
+            <textarea id="js-code" oninput="update(this.value);sync_scroll(this);" onscroll="sync_scroll(this);" onkeyup="run()" spellcheck="false"></textarea>
+            <pre id="highlighting" aria-hidden="true">
+                <code class="language-javascript" id="highlighting-content"></code>
+            </pre>
+            </div>
+
+        </div>
+        <div class="right">
+
+            <!-- <label><i class="fa-solid fa-play"></i>Output</label> -->
+            <iframe id="output"></iframe>
+            
+        </div>
+    </div>
+</body>
+</html>
